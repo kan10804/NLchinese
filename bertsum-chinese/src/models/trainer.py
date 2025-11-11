@@ -118,7 +118,8 @@ class Trainer(object):
 
             sent_scores, mask = self.model(src, segs, clss, mask, mask_cls)
 
-            loss = self.loss(sent_scores, labels.float())
+            loss = self.loss(sent_scores.view(-1), labels.float().view(-1))
+
             loss = (loss * mask.float()).sum()
             # .numel()：Returns the total number of elements in the input tensor.
             (loss / loss.numel()).backward()
