@@ -52,12 +52,10 @@ class Bert(nn.Module):
             self.model = BertModel(bert_config)
 
     def forward(self, x, segs, mask):
-        # sequence_output, pooled_output
-        # transformers输出最后一层，pytorch_pretrained_bert输出每层的结果
-        encoded_layers, _ = self.model(input_ids=x, attention_mask=mask, token_type_ids=segs)
-        # top_vec = encoded_layers[-1]
-        top_vec = encoded_layers
+        outputs = self.model(input_ids=x, attention_mask=mask, token_type_ids=segs)
+        top_vec = outputs.last_hidden_state  # tương đương encoded_layers[-1]
         return top_vec
+
 
 
 class Summarizer(nn.Module):

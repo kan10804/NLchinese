@@ -1,7 +1,12 @@
-numpy==1.17.2
-emoji==0.5.4
-multiprocess==0.70.9
-pytorch_pretrained_bert==0.6.2
-tensorboardX==2.0
-torch==1.4.0
-transformers==2.5.1
+# Core dependencies
+torch==2.3.0
+transformers==4.40.2
+numpy==1.26.4
+emoji==2.12.1
+multiprocess==0.70.16
+tensorboardX==2.6.2.2
+
+# Optional but recommended for compatibility
+tqdm==4.66.5
+scikit-learn==1.5.2
+pandas==2.2.2
