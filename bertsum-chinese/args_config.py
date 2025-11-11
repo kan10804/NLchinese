@@ -15,7 +15,8 @@ root = os.path.abspath(os.path.dirname(__file__))
 results_path = os.path.join(root, 'results')
 models_path = os.path.join(root, 'models')
 # bert_base_chinese = os.path.join(root, 'bert-base-chinese')
-bert_base_chinese = '/Users/jiang/Documents/bert/bert-base-chinese'
+bert_base_chinese = 'bert-base-chinese'
+
 
 parser = argparse.ArgumentParser()
 parser.add_argument("-encoder", default='classifier', type=str,
